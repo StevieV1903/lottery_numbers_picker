@@ -5,11 +5,12 @@ const NumberContainer = () => {
     const [ randomLotteryNumbers, setRandomLotteryNumbers ] = useState( [] )
     const [ randomExtraNumbers, setRandomExtraNumbers ] = useState( [] )
     const [ isEuroMillionsMenuButtonDisplayed, setIsEuroMillionsMenuButtonDisplayed ] = useState( true )
-    const [ isEuroMillionsGameDisplayed, setIsEuroMillionsGameDisplayed ] = useState( false )
+    const [ isEuroMillionsGenerateButtonDisplayed, setIsEuroMillionsGenerateButtonDisplayed ] = useState( false )
+    const [ isEuroLuckyStarsButtonDisplayed, setIsEuroLuckyStarsButtonDisplayed ] = useState( false )
 
     const handleEuroMillionsSelect = () => {
         setIsEuroMillionsMenuButtonDisplayed( false )
-        setIsEuroMillionsGameDisplayed( true )
+        setIsEuroMillionsGenerateButtonDisplayed( true )
         
     };
 
@@ -33,6 +34,8 @@ const NumberContainer = () => {
             const displayedEuroMillionsNumbers = sortedEuroMillionsNumbers.join(" ")
             console.log("euros:", displayedEuroMillionsNumbers)
             setRandomLotteryNumbers( displayedEuroMillionsNumbers )
+            setIsEuroMillionsGenerateButtonDisplayed( false )
+            setIsEuroLuckyStarsButtonDisplayed( true )
     };
 
     const handleEuroMillionsLuckyStarsClick = () => {
@@ -51,6 +54,7 @@ const NumberContainer = () => {
                 const displayedLuckyStarsNumbers = sortedLuckyStarsNumbers.join(" ")
                 console.log("euros:", displayedLuckyStarsNumbers)
                 setRandomExtraNumbers( displayedLuckyStarsNumbers )
+                setIsEuroLuckyStarsButtonDisplayed( false )
     };
 
     return(
@@ -58,9 +62,9 @@ const NumberContainer = () => {
         <>
         { isEuroMillionsMenuButtonDisplayed ? <h2>What game are you playing?</h2> : null }
         { isEuroMillionsMenuButtonDisplayed ? <button className="euro-millions-btn" onClick={() => handleEuroMillionsSelect()}>Euro Millions</button> : null }
-        { isEuroMillionsGameDisplayed ? <button className="euro-millions-btn" onClick={() => handleEuroMillionsClick()}>Generate Euro Millions Numbers</button> : null}
+        { isEuroMillionsGenerateButtonDisplayed ? <button className="euro-millions-btn" onClick={() => handleEuroMillionsClick()}>Generate Euro Millions Numbers</button> : null}
         <h1>{randomLotteryNumbers}</h1>
-        { randomLotteryNumbers.length > 0 ? <button className="euro-millions-btn" onClick={() => handleEuroMillionsLuckyStarsClick()}>Generate Lucky Star Numbers</button> : null}
+        { isEuroLuckyStarsButtonDisplayed ? <button className="euro-millions-btn" onClick={() => handleEuroMillionsLuckyStarsClick()}>Generate Lucky Star Numbers</button> : null}
         <h1>{randomExtraNumbers}</h1>
         { randomExtraNumbers.length > 0 ? <h2>Good Luck!!</h2> : null }
         { randomExtraNumbers.length > 0 ? <button>Main Menu</button> : null }

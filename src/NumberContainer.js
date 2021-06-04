@@ -10,10 +10,15 @@ const NumberContainer = () => {
 
     const handleEuroMillionsSelect = () => {
         setIsEuroMillionsMenuButtonDisplayed( false )
-        setIsEuroMillionsGenerateButtonDisplayed( true )
-        
+        setIsEuroMillionsGenerateButtonDisplayed( true )  
     };
 
+    const handleReturnHome = () => {
+        setRandomLotteryNumbers( [] )
+        setRandomExtraNumbers( [] )
+        setIsEuroMillionsMenuButtonDisplayed( true )
+        // window.location.reload( false )
+    };
 
     //function to handle click of EuroMillions button
     const handleEuroMillionsClick = () => {
@@ -60,14 +65,19 @@ const NumberContainer = () => {
     return(
 
         <>
-        { isEuroMillionsMenuButtonDisplayed ? <h2>What game are you playing?</h2> : null }
-        { isEuroMillionsMenuButtonDisplayed ? <button className="euro-millions-btn" onClick={() => handleEuroMillionsSelect()}>Euro Millions</button> : null }
-        { isEuroMillionsGenerateButtonDisplayed ? <button className="euro-millions-btn" onClick={() => handleEuroMillionsClick()}>Generate Euro Millions Numbers</button> : null}
+        { isEuroMillionsMenuButtonDisplayed ? 
+        <h2>What game are you playing?</h2> 
+        : null }
+
+        { isEuroMillionsMenuButtonDisplayed ? 
+        <button className="euro-millions-btn" onClick={ () => handleEuroMillionsSelect() }>Euro Millions</button> 
+        : null }
+        { isEuroMillionsGenerateButtonDisplayed ? <button className="euro-millions-btn" onClick={ () => handleEuroMillionsClick() }>Generate Euro Millions Numbers</button> : null}
         <h1>{randomLotteryNumbers}</h1>
-        { isEuroLuckyStarsButtonDisplayed ? <button className="euro-millions-btn" onClick={() => handleEuroMillionsLuckyStarsClick()}>Generate Lucky Star Numbers</button> : null}
+        { isEuroLuckyStarsButtonDisplayed ? <button className="euro-millions-btn" onClick={ () => handleEuroMillionsLuckyStarsClick() }>Generate Lucky Star Numbers</button> : null}
         <h1>{randomExtraNumbers}</h1>
         { randomExtraNumbers.length > 0 ? <h2>Good Luck!!</h2> : null }
-        { randomExtraNumbers.length > 0 ? <button>Main Menu</button> : null }
+        { randomExtraNumbers.length > 0 ? <button onClick={ () => handleReturnHome() }>Main Menu</button> : null }
         </>
 
     )

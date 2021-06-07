@@ -1,5 +1,5 @@
 import './App.css';
-import NumberContainer from './NumberContainer.js';
+import LotteryContainer from './LotteryContainer.js';
 
 const App = () => {
 
@@ -8,7 +8,7 @@ const App = () => {
   return (
     <div className="App">
       <h1>Lottery Numbers Picker</h1>
-      <NumberContainer />
+      <LotteryContainer />
     </div>
   )
 };

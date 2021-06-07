@@ -16,10 +16,19 @@ body {
     font-family: 'Nunito', sans-serif;
     font-weight: bold;
     cursor: pointer;
-
   }
+
+  button:active {
+    transform: translateY(3px);
+  }
+  
   button.euro-millions-btn {
     background-color: #ffd900;
     color: #09008d;
     border: solid 1px #09008d;
   }
+
+  button.euro-millions-btn:hover {
+    background-color: #b99d00;
+  }
+  

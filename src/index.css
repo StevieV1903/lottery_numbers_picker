@@ -15,13 +15,15 @@ body {
     border-radius: 10px;
     font-family: 'Nunito', sans-serif;
     font-weight: bold;
+    font-size: 18px;
     cursor: pointer;
+    min-width: 150px;
   }
 
   button:active {
     transform: translateY(3px);
   }
-  
+
   button.euro-millions-btn {
     background-color: #ffd900;
     color: #09008d;
@@ -30,5 +32,36 @@ body {
 
   button.euro-millions-btn:hover {
     background-color: #b99d00;
+  }
+
+  button.lotto-btn {
+    background-color: #ff0000;
+    color: #ffffff;
+    border: solid 1px #b1b1b1;
+  }
+
+  button.lotto-btn:hover {
+    background-color: #c00000;
+  }
+
+  .euro-millions-number {
+    display: inline-block;
+    font-size: 20px;
+    font-weight: bold;
+    padding: 10px;
+    margin: 10px;
+    margin-bottom: 20px;
+    border: solid 3px #09008d;
+    border-radius: 50%;
+    width: auto;
+    color: #09008d;
+    background-color: #ffd900;
+    list-style-type: none;
+
+  }
+  ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
   }
   

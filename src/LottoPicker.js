@@ -1,4 +1,4 @@
-import React, { useImperativeHandle, useState } from 'react';
+import React from 'react';
 
 const LottoPicker = ( 
     { lottoNumbers, 
@@ -12,7 +12,7 @@ const LottoPicker = (
         let lottoNumbers = []
         let i = 0
             while( i  <= 5 ){
-                const randomLotteryNumber = Math.floor(Math.random() * 50) + 1
+                const randomLotteryNumber = Math.floor(Math.random() * 59) + 1
                 //add a '0' to numbers less than 10
                 const formattedRandomLotteryNumber = (randomLotteryNumber < 10 ? '0' : '') + randomLotteryNumber;
                 if(!lottoNumbers.includes(formattedRandomLotteryNumber)){
@@ -23,6 +23,7 @@ const LottoPicker = (
             }
 
             const sortedLottoNumbers = lottoNumbers.sort((a, b) => a - b)
+
             const displayedLottoNumbers = sortedLottoNumbers.join(" ")
             setLottoNumbers( displayedLottoNumbers )
     };
@@ -31,6 +32,7 @@ const LottoPicker = (
 
     return(
         <>
+        
         { isLottoMenuButtonDisplayed ? <button className="lotto-btn" onClick={ ()=> handleLottoSelect() }>Lotto</button> : null}
         { isLottoGenerateButtonDisplayed ? <button className="lotto-btn" onClick={ ()=> handleLottoClick() }>Generate Lotto Numbers</button> : null }
         <h1>{ lottoNumbers }</h1>

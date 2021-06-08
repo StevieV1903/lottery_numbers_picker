@@ -10,7 +10,8 @@ const EuroMillionsPicker = ({
     setIsEuroMillionsGenerateButtonDisplayed,
     isEuroLuckyStarsButtonDisplayed,
     setIsEuroLuckyStarsButtonDisplayed,
-    handleEuroMillionsSelect
+    handleEuroMillionsSelect,
+    isEuroMillionsRulesDisplayed
 }) => {
 
     //function to handle click of EuroMillions button
@@ -60,7 +61,7 @@ const EuroMillionsPicker = ({
                 // setEuroMillionsExtraNumbers( displayedLuckyStarsNumbers )
                 // setIsEuroLuckyStarsButtonDisplayed( false )
 
-                const sortedLuckyStarsNumbers = euroLuckyStars.sort((a, b) => a - b).join(" ")
+                const sortedLuckyStarsNumbers = euroLuckyStars.sort((a, b) => a - b)
                 console.log("euros:", sortedLuckyStarsNumbers)
                 setEuroMillionsExtraNumbers( sortedLuckyStarsNumbers )
                 setIsEuroLuckyStarsButtonDisplayed( false )
@@ -73,21 +74,28 @@ const EuroMillionsPicker = ({
             return <ul>{ numbersPicked }</ul>
     };
 
+    const displayEuroMillionsExtraNumbers = () => {
+        const luckyStarsPicked = euroMillionsExtraNumbers.map( luckyStar => 
+            <li className="euro-millions-number">{ luckyStar }</li>
+        )
+            return <ul>{ luckyStarsPicked }</ul>
+    };
+
 
     return(
         <>
+        { isEuroMillionsRulesDisplayed ? <h3 className="game-rules">For the EuroMillions game, the app will generate 5 regular numbers from a range of 1 to 50 and 2 Lucky Star numbers of a range of 1 to 12. </h3> : null }
         { isEuroMillionsMenuButtonDisplayed ? 
-        <button className="euro-millions-btn" onClick={ () => handleEuroMillionsSelect() }>Euro Millions</button> 
+        <button className="euro-millions-btn" onClick={ () => handleEuroMillionsSelect() }>EuroMillions</button> 
         : null }
 
-        { isEuroMillionsGenerateButtonDisplayed ? <button className="euro-millions-btn" onClick={ () => handleEuroMillionsClick() }>Generate Euro Millions Numbers</button> : null}
+        { isEuroMillionsGenerateButtonDisplayed ? <button className="euro-millions-btn" onClick={ () => handleEuroMillionsClick() }>Generate EuroMillions Numbers</button> : null}
 
-        {/* <h1>{ euroMillionsNumbers }</h1> */}
         { displayEuroMillionsNumbers() }
 
         { isEuroLuckyStarsButtonDisplayed ? <button className="euro-millions-btn" onClick={ () => handleEuroMillionsLuckyStarsClick() }>Generate Lucky Star Numbers</button> : null}
         
-        <h1>{euroMillionsExtraNumbers}</h1>
+        { displayEuroMillionsExtraNumbers() }
         </>
     )
 };

@@ -5,7 +5,10 @@ const LottoPicker = (
     setLottoNumbers,
     handleLottoSelect,
     isLottoGenerateButtonDisplayed,
-    isLottoMenuButtonDisplayed } 
+    isLottoMenuButtonDisplayed, 
+    setIsLottoGenerateButtonDisplayed,
+    isLottoRulesDisplayed
+} 
     ) => {
 
     const handleLottoClick = () => {
@@ -23,19 +26,25 @@ const LottoPicker = (
             }
 
             const sortedLottoNumbers = lottoNumbers.sort((a, b) => a - b)
+            setLottoNumbers( sortedLottoNumbers )
+            setIsLottoGenerateButtonDisplayed( false )
+    };
 
-            const displayedLottoNumbers = sortedLottoNumbers.join(" ")
-            setLottoNumbers( displayedLottoNumbers )
+    const displayLottoNumbers = () => {
+        const lottoNumbersPicked = lottoNumbers.map( lottoNumber => 
+            <li className="lotto-number">{ lottoNumber }</li>
+        )
+            return <ul>{ lottoNumbersPicked }</ul>
     };
     
 
 
     return(
         <>
-        
+        { isLottoRulesDisplayed ? <h3>For the Lotto game, the app will generate 6 regular numbers from a range of 1 to 59. </h3> : null}
         { isLottoMenuButtonDisplayed ? <button className="lotto-btn" onClick={ ()=> handleLottoSelect() }>Lotto</button> : null}
         { isLottoGenerateButtonDisplayed ? <button className="lotto-btn" onClick={ ()=> handleLottoClick() }>Generate Lotto Numbers</button> : null }
-        <h1>{ lottoNumbers }</h1>
+        { displayLottoNumbers() }
         </>
     )
 };

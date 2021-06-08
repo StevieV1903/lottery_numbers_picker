@@ -9,6 +9,7 @@ body {
   }
   button {
     padding: 10px;
+    margin: 10px;
     background-color: white;
     color: black;
     border: solid 2px black;
@@ -24,6 +25,16 @@ body {
     transform: translateY(3px);
   }
 
+  button:hover {
+    background-color: #cacaca;
+  }
+
+  .game-rules {
+    margin: 10px 20px;
+    max-width: 550px;
+    margin: 20px auto;
+  }
+
   button.euro-millions-btn {
     background-color: #ffd900;
     color: #09008d;
@@ -37,11 +48,37 @@ body {
   button.lotto-btn {
     background-color: #ff0000;
     color: #ffffff;
-    border: solid 1px #b1b1b1;
+    border: solid 1px #09008d;
   }
 
   button.lotto-btn:hover {
     background-color: #c00000;
+  }
+
+  button.thunderball-btn {
+    background-color: #d900ff;
+    color: #ffffff;
+    border: solid 1px #09008d;
+  }
+  button.thunderball-btn:hover {
+    background-color: #a800c5;
+  }
+
+  .lotto-number {
+    display: inline-block;
+    font-size: 20px;
+    font-weight: bold;
+    padding: 10px;
+    margin: 10px;
+    margin-bottom: 20px;
+    border: solid 3px #09008d;
+    border-radius: 50%;
+    box-shadow: 5px 5px 5px grey;
+    width: auto;
+    color: #ffffff;
+    background-color: #ff0000;
+    list-style-type: none;
+
   }
 
   .euro-millions-number {
@@ -53,9 +90,26 @@ body {
     margin-bottom: 20px;
     border: solid 3px #09008d;
     border-radius: 50%;
+    box-shadow: 5px 5px 5px grey;
     width: auto;
     color: #09008d;
     background-color: #ffd900;
+    list-style-type: none;
+
+  }
+  .thunderball-number {
+    display: inline-block;
+    font-size: 20px;
+    font-weight: bold;
+    padding: 10px;
+    margin: 10px;
+    margin-bottom: 20px;
+    border: solid 3px #09008d;
+    border-radius: 50%;
+    box-shadow: 5px 5px 5px grey;
+    width: auto;
+    color: white;
+    background-color: #d900ff;
     list-style-type: none;
 
   }

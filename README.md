@@ -33,7 +33,10 @@ The application is currently work in progress, but will hopefully soon be hosted
 
 ### Web Screenshots
 
-<img width="600" alt="Screenshot 2021-05-07 at 18 12 05" src="https://user-images.githubusercontent.com/56826534/117485072-dc6fcb00-af5f-11eb-9bf3-97dd2be3a8e8.png">
-<img width="600" alt="Screenshot 2021-05-07 at 18 11 51" src="https://user-images.githubusercontent.com/56826534/117485083-e1347f00-af5f-11eb-9cb7-20aa4b2dd4fa.png">
+<img width="600" alt="Screenshot 2021-06-09 at 10 03 16" src="https://user-images.githubusercontent.com/56826534/121326062-1854d200-c90a-11eb-9110-70689367fd0c.png">
+<img width="600" alt="Screenshot 2021-06-09 at 10 03 35" src="https://user-images.githubusercontent.com/56826534/121326105-260a5780-c90a-11eb-9fca-d00bd8b3dcd0.png">
+<img width="600" alt="Screenshot 2021-06-09 at 10 03 52" src="https://user-images.githubusercontent.com/56826534/121326137-2dc9fc00-c90a-11eb-9562-a06c33abf223.png">
+
+
 
 ---

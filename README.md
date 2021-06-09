@@ -1,6 +1,6 @@
-# [Lottery Numbers Generator]()
+# Lottery Numbers Generator
 
-myJoke Generator is a fully responsive reactjs SPA that makes a fetch to an external api and renders the joke on the click of a button and also requires the user to click a seperate button to reveal the punchline. Also includes some pretty awesome button animations.
+Lottery Numbers Generator is an SPA that is written in javascript and uses React as the web framework using hooks and state. The app allows users to select from a choice of lottery games, such as EuroMillions, Lotto and Thunderball and proceeds to generate random lottery numbers for the selected game, including any extra or bonus balls required.
 
 This responsive project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app). 
 

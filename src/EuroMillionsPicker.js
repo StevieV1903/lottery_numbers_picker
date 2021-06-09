@@ -84,7 +84,12 @@ const EuroMillionsPicker = ({
 
     return(
         <>
-        { isEuroMillionsRulesDisplayed ? <h3 className="game-rules">For the EuroMillions game, the app will generate 5 regular numbers from a range of 1 to 50 and 2 Lucky Star numbers of a range of 1 to 12. </h3> : null }
+        { isEuroMillionsRulesDisplayed ? <div>
+            
+            <h2 className="game-title">EuroMillions Numbers Generator</h2>
+            <h3 className="game-rules">For the EuroMillions game, the app will generate 5 regular numbers from a range of 1 to 50 and 2 Lucky Star numbers of a range of 1 to 12. </h3> 
+        </div> : null }
+        {/* { isEuroMillionsRulesDisplayed ? <h3 className="game-rules">For the EuroMillions game, the app will generate 5 regular numbers from a range of 1 to 50 and 2 Lucky Star numbers of a range of 1 to 12. </h3> : null } */}
         { isEuroMillionsMenuButtonDisplayed ? 
         <button className="euro-millions-btn" onClick={ () => handleEuroMillionsSelect() }>EuroMillions</button> 
         : null }

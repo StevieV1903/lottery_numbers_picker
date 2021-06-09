@@ -1,4 +1,38 @@
+@import url('https://fonts.googleapis.com/css2?family=Cabin+Sketch:wght@400;700&display=swap');
+
 .App {
+  margin: 0;
+  background: 
+  linear-gradient(
+    rgba(0, 0, 0, 0.5),
+    rgba(0, 0, 0, 0.5)
+  ), url("./assets/Lottery_hero.jpg");
+	background-position: center; 
+	background-repeat: no-repeat; 
+  background-size: cover;
+  min-height: 100vh;
+
   text-align: center;
+  color: whitesmoke;
 }
+
+.app-title {
+  margin-top: 0;
+  padding-top: 35px;
+  font-family: 'Cabin Sketch', cursive;
+  font-size: 36px;
+}
+
+/* responsive rules */
+
+@media screen and (max-width: 370px) {
+
+  .app-title {
+    padding-top: 25px;
+    font-size: 30px;
+  }
+
+}
+
+
 

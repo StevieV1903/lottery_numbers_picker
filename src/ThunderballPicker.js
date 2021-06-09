@@ -58,7 +58,11 @@ const ThunderballPicker = ({
 
     return(
         <>
-        { isThunderballRulesDisplayed ? <h3 className="game-rules">For the Thunderball game, the app will generate 5 five regular numbers from 1 to 39 and one 'Thunderball' number from 1 to 14</h3> : null}
+        { isThunderballRulesDisplayed ? <div>
+            <h2 className="game-title">Thunderball Numbers Generator</h2>
+        <h3 className="game-rules">For the Thunderball game, the app will generate 5 five regular numbers from 1 to 39 and one 'Thunderball' number from 1 to 14</h3> 
+        </div> : null}
+        {/* { isThunderballRulesDisplayed ? <h3 className="game-rules">For the Thunderball game, the app will generate 5 five regular numbers from 1 to 39 and one 'Thunderball' number from 1 to 14</h3> : null} */}
         { isThunderballMenuButtonDisplayed ? <button className="thunderball-btn" onClick={ ()=> handleThunderballSelect()}>Thunderball</button> : null}
         { isThunderballGenerateButtonDisplayed ? <button className="thunderball-btn" onClick={ ()=> handleThunderballClick()} >Generate Thunderball Numbers</button> : null}
 

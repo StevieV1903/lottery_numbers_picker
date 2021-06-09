@@ -74,7 +74,7 @@ const LotteryContainer = () => {
 
         <>
         { isEuroMillionsMenuButtonDisplayed ? 
-        <h2>What game are you playing?</h2> 
+        <h2 className="intro-question-text" >What game are you playing?</h2> 
         : null }
 
         <EuroMillionsPicker 

@@ -1,4 +1,4 @@
-# Lottery Numbers Generator
+# [Lottery Numbers Generator](https://main.d1ccjr7ryl4ter.amplifyapp.com/)
 
 Lottery Numbers Generator is an SPA that is written in javascript and uses React as the web framework using hooks and state. The app allows users to select from a choice of lottery games, such as EuroMillions, Lotto and Thunderball and proceeds to generate random lottery numbers for the selected game, including any extra or bonus balls required.
 

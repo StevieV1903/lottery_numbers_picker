@@ -48,19 +48,19 @@ body {
   }
 
   button.euro-millions-btn {
-    background-color: #ffd900;
-    color: #09008d;
-    border: solid 1px #09008d;
+    background-color: #F8B400;
+    color: navy;
+    border: solid 1px navy;
   }
 
   button.euro-millions-btn:hover {
-    background-color: #b99d00;
+    background-color: #ECA100;
   }
 
   button.lotto-btn {
     background-color: #ff0000;
     color: #ffffff;
-    border: solid 1px #09008d;
+    border: solid 1px navy;
   }
 
   button.lotto-btn:hover {
@@ -82,7 +82,7 @@ body {
     border: solid 1px #ffa500;
   }
   button.thunderball-btn:hover {
-    background-color: #be7c00;
+    background-color: #ECA100;
   }
 
   .lotto-number {
@@ -97,9 +97,19 @@ body {
     box-shadow: 5px 5px 5px grey;
     width: auto;
     color: #ffffff;
-    background-color: #ff0000;
+    background-color: #ff4040;
     list-style-type: none;
+    animation: pulse 5s 1;
 
+  }
+  
+  @keyframes pulse {
+    0% {
+      background-color: white;
+    }
+    100% {
+      background-color: #ff4040;
+    }
   }
 
   .euro-millions-number {
@@ -109,14 +119,24 @@ body {
     padding: 10px;
     margin: 10px;
     margin-bottom: 20px;
-    border: solid 3px #09008d;
+    border: solid 3px navy;
     border-radius: 50%;
     box-shadow: 5px 5px 5px grey;
     width: auto;
-    color: #09008d;
-    background-color: #ffd900;
+    color: navy;
+    background-color: #F8B400;
     list-style-type: none;
+    animation: fade 5s 1;
 
+  }
+
+  @keyframes fade {
+    0% {
+      background-color: navy;
+    }
+    100% {
+      background-color: #F8B400;
+    }
   }
   .thunderball-number {
     display: inline-block;
@@ -132,6 +152,16 @@ body {
     color: white;
     background-color: #d900ff;
     list-style-type: none;
+    animation: change 5s 1;
+  }
+
+  @keyframes change {
+    0% {
+      background-color: white;
+    }
+    100% {
+      background-color: #d900ff;
+    }
   }
 
 .irish-lotto-number {
@@ -148,6 +178,16 @@ body {
   color: white;
   background-color: #00bb28;
   list-style-type: none;
+  animation: fader 5s 1;
+}
+
+@keyframes fader {
+  0% {
+    background-color: white;
+  }
+  100% {
+    background-color: #00bb28;
+  }
 }
 
   ul {

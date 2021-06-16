@@ -43,10 +43,9 @@ const LottoPicker = (
         <>
         { isLottoRulesDisplayed ? <div>
             <h2 className="game-title">Lotto Numbers Generator</h2>
-            <h3 className="game-rules" >For the Lotto game, the app will generate 6 regular numbers from a range of 1 to 59. </h3> 
+            <h3 className="game-rules" >For the Lotto draw, the app will generate 6 regular numbers from a range of 1 to 59. </h3> 
         </div> : null}
-
-        {/* { isLottoRulesDisplayed ? <h3>For the Lotto game, the app will generate 6 regular numbers from a range of 1 to 59. </h3> : null} */}
+        
         { isLottoMenuButtonDisplayed ? <button className="lotto-btn" onClick={ ()=> handleLottoSelect() }>Lotto</button> : null}
         { isLottoGenerateButtonDisplayed ? <button className="lotto-btn" onClick={ ()=> handleLottoClick() }>Generate Lotto Numbers</button> : null }
         { displayLottoNumbers() }

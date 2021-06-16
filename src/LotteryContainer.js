@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import EuroMillionsPicker from './EuroMillionsPicker.js';
 import LottoPicker from './LottoPicker.js';
 import ThunderballPicker from './ThunderballPicker.js';
+import IrishLotteryPicker from './IrishLotteryPicker.js';
 
 const LotteryContainer = () => {
 
@@ -10,7 +11,6 @@ const LotteryContainer = () => {
     const [ isEuroMillionsMenuButtonDisplayed, setIsEuroMillionsMenuButtonDisplayed ] = useState( true )
     const [ isEuroMillionsGenerateButtonDisplayed, setIsEuroMillionsGenerateButtonDisplayed ] = useState( false )
     const [ isEuroLuckyStarsButtonDisplayed, setIsEuroLuckyStarsButtonDisplayed ] = useState( false )
-    // const [ nextEuroMillionsDrawDate, setNextEuroMillionsDrawDate ] = useState( "" )
 
     const [ lottoNumbers, setLottoNumbers ] = useState( [] )
     const [ isLottoMenuButtonDisplayed, setIsLottoMenuButtonDisplayed ] = useState( true )
@@ -22,27 +22,32 @@ const LotteryContainer = () => {
     const [ isThunderballGenerateButtonDisplayed, setIsThunderballGenerateButtonDisplayed ] = useState( false )
     const [ isThunderballExtraButtonDisplayed, setIsThunderballExtraButtonDisplayed ] = useState( false )
 
+    const [ irishLotteryNumbers, setIrishLotteryNumbers ] = useState( [] )
+    const [ isIrishLotteryMenuButtonDisplayed, setIsIrishLotteryMenuButtonDisplayed ] = useState( true )
+    const [ isIrishGenerateButtonDisplayed, setIsIrishGenerateButtonDisplayed ] = useState( false )
+
     const [ isEuroMillionsRulesDisplayed, setIsEuroMillionsRulesDisplayed ] = useState( false )
     const [ isLottoRulesDisplayed, setIsLottoRulesDisplayed ] = useState( false )
     const [ isThunderballRulesDisplayed, setIsThunderballRulesDisplayed ] = useState( false )
+    const [ isIrishLotteryRulesDisplayed, setIsIrishLotteryRulesDisplayed ] = useState( false )
 
     const handleEuroMillionsSelect = () => {
 
         setIsEuroMillionsMenuButtonDisplayed( false )
-        setIsEuroMillionsGenerateButtonDisplayed( true ) 
-        setIsLottoMenuButtonDisplayed( false )
-        setIsLottoGenerateButtonDisplayed( false )
+        setIsEuroMillionsGenerateButtonDisplayed( true )
         setIsEuroMillionsRulesDisplayed( true )
+        setIsLottoMenuButtonDisplayed( false )
         setIsThunderballMenuButtonDisplayed( false )
+        setIsIrishLotteryMenuButtonDisplayed( false )
     };
 
     const handleLottoSelect = () => {
-        setIsEuroMillionsMenuButtonDisplayed( false )
-        setIsEuroMillionsGenerateButtonDisplayed( false ) 
         setIsLottoMenuButtonDisplayed( false ) 
         setIsLottoGenerateButtonDisplayed( true ) 
         setIsLottoRulesDisplayed( true )
+        setIsEuroMillionsMenuButtonDisplayed( false )
         setIsThunderballMenuButtonDisplayed( false )
+        setIsIrishLotteryMenuButtonDisplayed( false )
     };
 
     const handleThunderballSelect = () => {
@@ -50,25 +55,37 @@ const LotteryContainer = () => {
         setIsThunderballGenerateButtonDisplayed( true )
         setIsThunderballRulesDisplayed( true ) 
         setIsEuroMillionsMenuButtonDisplayed( false )
-        setIsEuroMillionsGenerateButtonDisplayed( false ) 
         setIsLottoMenuButtonDisplayed( false ) 
-        
+        setIsIrishLotteryMenuButtonDisplayed( false ) 
+    };
+
+    const handleIrishLotterySelect = () => {
+        setIsIrishLotteryMenuButtonDisplayed( false )
+        setIsIrishLotteryRulesDisplayed( true ) 
+        setIsIrishGenerateButtonDisplayed( true )  
+        setIsThunderballMenuButtonDisplayed( false )
+        setIsEuroMillionsMenuButtonDisplayed( false )
+        setIsLottoMenuButtonDisplayed( false )
         
     };
 
     const handleReturnHome = () => {
         setEuroMillionsNumbers( [] )
         setEuroMillionsExtraNumbers( [] )
-        setIsEuroMillionsMenuButtonDisplayed( true )
-        setIsEuroMillionsRulesDisplayed( false )
-        setIsLottoMenuButtonDisplayed( true )
         setLottoNumbers( [] )
-        setIsLottoGenerateButtonDisplayed( false )
-        setIsLottoRulesDisplayed( false )
         setThunderballNumbers( [] )
         setThunderballExtraNumber( [] )
-        setIsThunderballRulesDisplayed( false )
+        setIrishLotteryNumbers( [] )
+
+        setIsEuroMillionsMenuButtonDisplayed( true )
+        setIsLottoMenuButtonDisplayed( true )
         setIsThunderballMenuButtonDisplayed( true )
+        setIsIrishLotteryMenuButtonDisplayed( true )
+
+        setIsEuroMillionsRulesDisplayed( false )
+        setIsLottoRulesDisplayed( false )
+        setIsThunderballRulesDisplayed( false )
+        setIsIrishLotteryRulesDisplayed( false )
 
     };
 
@@ -120,13 +137,23 @@ const LotteryContainer = () => {
         thunderballExtraNumber={ thunderballExtraNumber }
 
         />
+
+        <IrishLotteryPicker
+        irishLotteryNumbers={ irishLotteryNumbers }
+        setIrishLotteryNumbers={ setIrishLotteryNumbers }
+        handleIrishLotterySelect={ handleIrishLotterySelect }
+        isIrishLotteryMenuButtonDisplayed={ isIrishLotteryMenuButtonDisplayed }
+        isIrishLotteryRulesDisplayed={ isIrishLotteryRulesDisplayed }
+        isIrishGenerateButtonDisplayed={ isIrishGenerateButtonDisplayed }
+        setIsIrishGenerateButtonDisplayed={ setIsIrishGenerateButtonDisplayed }
         
-        { lottoNumbers.length > 0 || euroMillionsExtraNumbers.length > 0 || thunderballExtraNumber.length > 0 ? 
-        <h2>Good Luck!!</h2> 
-        : null }
-        { lottoNumbers.length > 0 || euroMillionsExtraNumbers.length > 0 || thunderballExtraNumber.length > 0 ? 
-        <button onClick={ () => handleReturnHome() }>Main Menu</button> 
-        : null }
+        />
+        
+        { lottoNumbers.length > 0 || euroMillionsExtraNumbers.length > 0 || thunderballExtraNumber.length || irishLotteryNumbers.length > 0 ? 
+            <div>
+                <h2>Good Luck!!</h2> 
+                <button onClick={ () => handleReturnHome() }>Main Menu</button> 
+            </div> : null}
         </>
 
     )

@@ -76,6 +76,15 @@ body {
     background-color: #a800c5;
   }
 
+  button.irish-btn {
+    background-color: #00bb28;
+    color: #ffffff;
+    border: solid 1px #ffa500;
+  }
+  button.thunderball-btn:hover {
+    background-color: #be7c00;
+  }
+
   .lotto-number {
     display: inline-block;
     font-size: 20px;
@@ -123,8 +132,24 @@ body {
     color: white;
     background-color: #d900ff;
     list-style-type: none;
-
   }
+
+.irish-lotto-number {
+  display: inline-block;
+  font-size: 20px;
+  font-weight: bold;
+  padding: 10px;
+  margin: 10px;
+  margin-bottom: 20px;
+  border: solid 3px #ffa500;
+  border-radius: 50%;
+  box-shadow: 5px 5px 5px grey;
+  width: auto;
+  color: white;
+  background-color: #00bb28;
+  list-style-type: none;
+}
+
   ul {
     list-style-type: none;
     padding: 0;
@@ -161,6 +186,12 @@ body {
     margin-bottom: 10px;
   }
   .thunderball-number {
+    font-weight: bold;
+    padding: 5px;
+    margin: 3px;
+    margin-bottom: 10px;
+  }
+  .irish-lotto-number {
     font-weight: bold;
     padding: 5px;
     margin: 3px;

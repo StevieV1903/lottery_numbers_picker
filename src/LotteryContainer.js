@@ -10,6 +10,7 @@ const LotteryContainer = () => {
     const [ isEuroMillionsMenuButtonDisplayed, setIsEuroMillionsMenuButtonDisplayed ] = useState( true )
     const [ isEuroMillionsGenerateButtonDisplayed, setIsEuroMillionsGenerateButtonDisplayed ] = useState( false )
     const [ isEuroLuckyStarsButtonDisplayed, setIsEuroLuckyStarsButtonDisplayed ] = useState( false )
+    // const [ nextEuroMillionsDrawDate, setNextEuroMillionsDrawDate ] = useState( "" )
 
     const [ lottoNumbers, setLottoNumbers ] = useState( [] )
     const [ isLottoMenuButtonDisplayed, setIsLottoMenuButtonDisplayed ] = useState( true )
@@ -26,6 +27,7 @@ const LotteryContainer = () => {
     const [ isThunderballRulesDisplayed, setIsThunderballRulesDisplayed ] = useState( false )
 
     const handleEuroMillionsSelect = () => {
+
         setIsEuroMillionsMenuButtonDisplayed( false )
         setIsEuroMillionsGenerateButtonDisplayed( true ) 
         setIsLottoMenuButtonDisplayed( false )

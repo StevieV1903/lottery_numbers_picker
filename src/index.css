@@ -23,8 +23,9 @@ body {
     color: black;
     border: solid 2px black;
     border-radius: 10px;
-    font-family: 'Nunito', sans-serif;
-    font-weight: bold;
+    /* font-family: 'Nunito', sans-serif; */
+    font-family: 'Cabin Sketch', cursive;
+    /* font-weight: bold; */
     font-size: 18px;
     cursor: pointer;
     min-width: 150px;

@@ -4,7 +4,7 @@ Lottery Numbers Generator is an SPA that is written in javascript and uses React
 
 This responsive project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app). 
 
-The application is hosted on netlify.
+The application is hosted on AWS Amplify.
 
 ---
 
